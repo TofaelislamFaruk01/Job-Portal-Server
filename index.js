@@ -111,7 +111,7 @@ console.log("Pinged your deployment. You successfully connected to MongoDB!");
    // await client.close();
   }
 }
-// run().catch(console.dir);
+run().catch(console.dir);
 
 
 
@@ -119,11 +119,11 @@ app.get('/',(req,res)=>{
     res.send('Job is falling from the sky');
 })
 
-// app.listen(port,()=>{
-//     console.log(`Job is waiting at : ${port}`);
-// })
+app.listen(port,()=>{
+    console.log(`Job is waiting at : ${port}`);
+})
 
-// module.exports = app;
+module.exports = app;
 
 // const serverless = require('serverless-http');
 // module.exports.handler = serverless(app);
