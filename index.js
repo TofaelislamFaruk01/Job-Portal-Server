@@ -119,13 +119,13 @@ app.get('/',(req,res)=>{
     res.send('Job is falling from the sky');
 })
 
-app.listen(port,()=>{
-    console.log(`Job is waiting at : ${port}`);
-})
+// app.listen(port,()=>{
+//     console.log(`Job is waiting at : ${port}`);
+// })
 
 // module.exports = app;
 
-// const serverless = require('serverless-http');
-// module.exports.handler = serverless(app);
+const serverless = require('serverless-http');
+module.exports.handler = serverless(app);
 
 
