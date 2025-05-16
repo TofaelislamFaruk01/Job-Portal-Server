@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 //app.use(cors());
 const corsOptions = {
-  origin: 'http://localhost:5173', // allow only your local client
+  origin: 'https://job-portal-70de2.web.app', // allow only your local client
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // allow these HTTP methods
   credentials: true // if you need to send cookies
 };
@@ -40,9 +40,7 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
    // await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    
 
     const database = client.db("JobPortal");
    
@@ -103,7 +101,9 @@ async function run() {
 
 
     
-
+// Send a ping to confirm a successful connection
+await client.db("admin").command({ ping: 1 });
+console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
 
   } finally {
@@ -119,13 +119,13 @@ app.get('/',(req,res)=>{
     res.send('Job is falling from the sky');
 })
 
-// app.listen(port,()=>{
-//     console.log(`Job is waiting at : ${port}`);
-// })
+app.listen(port,()=>{
+    console.log(`Job is waiting at : ${port}`);
+})
 
-module.exports = app;
+// module.exports = app;
 
-const serverless = require('serverless-http');
-module.exports.handler = serverless(app);
+// const serverless = require('serverless-http');
+// module.exports.handler = serverless(app);
 
 
