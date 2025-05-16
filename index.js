@@ -111,7 +111,7 @@ console.log("Pinged your deployment. You successfully connected to MongoDB!");
    // await client.close();
   }
 }
-run().catch(console.dir);
+// run().catch(console.dir);
 
 
 
